@@ -8,7 +8,7 @@ const TXT = 'မူလအစ ဗြာဟ္မီက မြန်မာစာ �
 var isPaused = false;
 
 // fps
-const FPS = 60;
+const FPS = 30;
 const INTERVAL = 1000 / FPS;
 var now, then, elapsed;
 
@@ -26,7 +26,7 @@ can.addEventListener('mousedown', mouseDown);
 
 // multiplier
 const SPR_ALPHA_M = 0.925;	// must be lesser than 1
-const SPR_FONT_SIZE_M = 1.5;
+const SPR_FONT_SIZE_M = 1.25;
 
 // txtSprites
 const FONT_NAME = 'Padauk';
