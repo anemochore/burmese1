@@ -4,7 +4,5 @@ description: burmese typo 1
 authors:
   - anemochore
 resources:
-  - /scripts/main.js
-  - /styles/main.css
 normalize_css: no
 ...
