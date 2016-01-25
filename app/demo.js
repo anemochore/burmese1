@@ -7,6 +7,11 @@ const TXT = 'မူလအစ ဗြာဟ္မီက မြန်မာစာ �
 
 var isPaused = false;
 
+// fps
+const FPS = 60;
+const INTERVAL = 1000 / FPS;
+var now, then, elapsed;
+
 // canvas
 const C_WIDTH = 640;
 const C_HEIGHT = 480;
@@ -43,6 +48,8 @@ function go() {
 
 	spr = txt2Sprites(TXT);
 
+	then = Date.now();
+
 	// starting loop
 	loop();
 }
@@ -52,6 +59,14 @@ function loop() {
 
 	if(isPaused) return;
 
+	// limiting fps
+	now = Date.now();
+	elapsed = now - then;
+	if(elapsed <= INTERVAL) return;
+
+	then = now - (elapsed % INTERVAL);
+
+	// drawing goes below
 	ctx.clearRect(0,0, C_WIDTH,C_HEIGHT);
 
 	for (var i = 0; i < spr.length; i++) {
