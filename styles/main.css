@@ -1,0 +1,7 @@
+@import url('http://mmwebfonts.comquas.com/fonts/?font=padauk');
+
+html, body, canvas {
+    font-family: padauk, Myanmar3, Arial;
+    margin: 0;
+    padding: 0;
+}
