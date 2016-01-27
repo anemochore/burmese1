@@ -3,9 +3,15 @@
  */
 'use strict';
 
-const TXT = 'မူလအစ ဗြာဟ္မီက မြန်မာစာ အရေးအသား ပေါ်ပေါက်ဖြစ်ထွန်းပုံကို စူးစမ်းလေ့လာခဲ့ကြသော သုတေသီအားလုံးကပင် မြန်မာအရေးအသား၊ မြန်မာအက္ခရာသည် ခရစ်တော်မပေါ်မီ ဘီစီ ၅၀၀ ခန့်မှ အေဒီ ၃၀၀ ကျော်အထိ အိန္ဒိယဒေသတွင် ထွန်းကားခဲ့သည့် ဗြာဟ္မီအရေးအသား၌ မြစ်ဖျားခံသည်ဟု လက်ခံကြသည်။ မြန်မာအရေးအသားစနစ်သည် ဗြာဟ္မီအရေးအသားစနစ်ကဲ့သို့ပင် ဗျည်းအက္ခရာများ၊ ဗျည်းတွဲသင်္ကေတများ၊ သရအက္ခရာများ၊ သရသင်္ကေတများ၊ နိဂ္ဂဟိတ် (သေးသေးတင်)၊ ဝိသဇ္ဇနီ (ဝစ္စပေါက်) သင်္ကေတများဟူသော ပစ္စည်းအဆောက်အဦများဖြင့် တည်ဆောက်သည့် အရေးအသားစနစ်ဖြစ်သည်။ ဗြာဟ္မီအရေးအသားကို အသုံးပြုသည့် အခြားစကားများနှင့် မြန်မာစကားတို့၏ ခြားနားမှုများကြောင့် ဗျည်းအရေအတွက်၊ သရအရေအတွက်၊ သင်္ကေတအမျိုးအမည်နှင့် အရေအတွက် အနည်းငယ်ကွာခြားမှု ရှိစေကာမူ မြန်မာအရေးအသားစနစ်သည် ဗြာဟ္မီအရေးအသားစနစ်နှင့် အခြေခံအားဖြင့် တူညီသည်။ ဗြာဟ္မီဗျည်းအက္ခရာ၊ ဗျည်းတွဲသင်္ကေတ၊ သရအက္ခရာ၊ သရသင်္ကေတ၊ နိဂ္ဂဟိတ်၊ ဝိသဇ္ဇနီတို့၏ ပုံသဏ္ဌာန်များ ခေတ်အဆက်ဆက် ပြောင်းလဲပုံကို ခြေရာခံကြည့်သည့်အခါတွင်လည်း မြန်မာဗျည်းအက္ခရာ၊ ဗျည်းတွဲသင်္ကေတ၊ သရအက္ခရာ၊ သရသင်္ကေတ၊ နိဂ္ဂဟိတ်၊ ဝိသဇ္ဇနီတို့၏ ပုံသဏ္ဌာန်များနှင့် ဆက်နွှယ်နေသည်ကို အထင်အရှား တွေ့နိုင်ပေသည်။ ယင်းသို့ ပစ္စည်းအဆောက်အဦး အားဖြင့်လည်းကောင်း၊ အက္ခရာပုံသဏ္ဌာန်အားဖြင့်လည်းကောင်း တူညီဆက်နွှယ်မှုရှိခြင်းကြောင့် မြန်မာအရေးအသားသည် ဗြာဟ္မီအရေးအသား၌ မြစ်ဖျားခံသည်ဟူသော အချက်မှာ အငြင်းပွားဖွယ် မရှိပေ။ ဗြာဟ္မီမှ ဆင့်ကဲဖြစ်ထွန်းလာသော အရေးအသားများ ဗြာဟ္မီအရေးအသားကို ဘီစီ ၅ ရာစုခန့်က စတင်တွေ့ရသည်။ ၎င်းသည် ဘီစီ ၃ ရာစုအတွင်း အသောကမင်းလက်ထက်တွင် အိန္ဒိယတစ်ခွင်တစ်ပြင်၌ ပျံ့နှံ့ထွန်းကားခဲ့သည်။ အသောကမင်းတည်ထောင်သော မောရိယနိုင်ငံကြီးပျက်စီးပြီးနောက် အိန္ဒိယမြောက်ပိုင်းတွင် ကုသျှာနမင်းဆက်၊ ထို့နောက် ဂုပ္တမင်းဆက်တို့ ပေါ်ပေါက်ကြီးစိုးခဲ့သည်။ ယင်းမင်းများလက်ထက် ဗြာဟ္မီအက္ခရာသည် တစ်စတစ်စ ပုံသဏ္ဌာန်ပြောင်းလဲလာသည်။ မင်းများကိုအစွဲပြု၍ ယင်းတို့လက်ထက် အရေးအသားများကို ကုသျှာနအရေးအသား၊ ဂုပ္တအရေးအသားဟု ခေါ်တွင်ခဲ့ကြသည်။ ထိုမှတဖန် အကောက်အကွေ့များသော ကုဋိလအရေးအသား၊ နာဂစာ၊ မြို့သုံးစာဟုဆိုကြသော နာဂရီအရေးအသေား၊ ရှင်းလင်းသော သျှရဒါအရေးအသား၊ ဘင်္ဂလာဒေသတစ်ခွင်တွင်သုံးသော ဘင်္ဂါလီအရေးအသားများ ဒေသအလိုက်၊ ခေတ်အလိုက် ဆင့်ပွားဖြစ်ထွန်းလာသည်။ ယင်းအရေးအသား အက္ခရာတို့သည် ကာလဒေသအလိုက် ပုံသဏ္ဌာန်အားဖြင့် တစ်စတစ်စ ခြားနားကွဲပြား လာခဲ့ကြသည်။ အိန္ဒိယတောင်ပိုင်းတွင်မူ မောရိယနိုင်ငံကြီး ပျက်စီးပြီးနောက် အန္ဓြမင်းဆက် ပေါ်ပေါက်ခဲ့သည်။ ထို့နောက် ပလ္လဝမင်းဆက်။ ကဓမ္ဗမင်းဆက်၊ စလုကျမင်းဆက်၊ ရဋ္ဌကူဋမင်းဆက်၊ စောဠမင်းဆက် စသည်တို့ ပေါ်ပေါက်ခဲ့သည်။ ယင်းမင်းများအုပ်စိုးရာ ခေတ်တစ်လျှောက်၊ အနောက်ဘက်ဒေသတွင် ထွန်းကားသည့် ပစ္ဆိမီအရေးအသား၊ အလယ်ပိုင်းဒေသတွင် ထွန်းကားသည့် မဓျပြဒေသျှီအရေးအသား၊ တောင်ဘက်ပိုင်းတွင် ထွန်းကားသော ကဓမ္ဗ၊ စလုကျ၊ ရဋ္ဌကူဋစသည်တို့ အကျုံးဝင်သည့် တေလုဂူဒေသ၊ ကနဍီဒေသတို့တွင်သုံးသော တေလုဂူ ကနဍီအရးအသား၊ကျမ်းဂန်သုံး ဂြန္ထအရေးအသား၊ တမီလအရပ်ဒေသသုံး တမီလအရေးအသား စသည့်အရေးအသားများ ဗြာဟ္မီမှ ဆင့်ပွားဖြစ်ထွန်း ပေါ်ပေါက်ခဲ့သည်။ ဗြာဟ္မီမှ ဆင်းသက်ဖြစ်ထွန်းလာသော ယင်းအိန္ဒိယ အရေးအသား အက္ခရာတို့သည် အေဒီ ၁ ရာစုမှ ၈ ရာစုအတွင်း တိဗက်၊ သီရိလင်္ကာ၊ မြန်မာ၊ ထိုင်း၊ ကမ္ဗောဒီးယား၊ အင်ဒိုနီးရှားစသည့် ဒေသများသို့ အိန္ဒိယအယူဝါဒ၊ ယဉ်ကျေးမှုများနှင့်အတူ ပျံ့နှံ့ရောက်ရှိပြီး ယင်းဒေသများတွင် တိုင်းရင်း အရေးအသားအက္ခရာများ ဖြစ်ထွန်းမှုအတွက် အထောက်အပံ့ပြုခဲ့ပေသည်။';
+const TXT = 'ပျူစာ။ ။ ပျူမြို့ပြနိုင်ငံများသည် အေဒီ ၉-၁၀ ရာစုအထိ မြန်မာနိုင်ငံတွင် တည်ရှိခဲ့သည်ဟု သမိုင်းသုတေသီတို့က ယူဆကြသည်။ မြန်မာနိုင်ငံအနှံ့အပြားတွင် ပျူကျောက်စာများကို တွေ့ရသည်။ သို့သော် ယင်းကျောက်စာများတွင်း ခုနှစ်သက္ကရာဇ် မပါခြင်း၊ အချိန်ု့မှာ ဖတ်မရလောက်အောင် မှေးမှိန်နေခြင်းတို့ကြောင့် ပျူကျောက်စာများကို ခု၊ နှစ်ပိုင်းခြား၍ ပြောဆိုရန် အခက်အခဲရှိပေသည်။ အက္ခရာ ပုံသဏ္ဌာန်ကို မူတည်၍သာ ခေတ်ကို ရာစုအလိုက် ခန့်မှန်းပြောဆိုကြရပေသည်။ သို့သော် ၁၂ ရာစုအစ၌ ရေးထိုးထားသည့် ရာဇကုမာရ်ကျောက်စာ (ပျူဘာသာ) အရလည်းကောင်း၊ မူလအစ ဗြာဟ္မီက မြန်မာစာ အရေးအသား ပေါ်ပေါက်ဖြစ်ထွန်းပုံကို စူးစမ်းလေ့လာခဲ့ကြသော သုတေသီအားလုံးကပင် မြန်မာအရေးအသား၊ မြန်မာအက္ခရာသည် ခရစ်တော်မပေါ်မီ ဘီစီ ၅၀၀ ခန့်မှ အေဒီ ၃၀၀ ကျော်အထိ အိန္ဒိယဒေသတွင် ထွန်းကားခဲ့သည့် ဗြာဟ္မီအရေးအသား၌ မြစ်ဖျားခံသည်ဟု လက်ခံကြသည်။ ပျူစာများ။ ။ မြန်မာပြည် ဧရာဝတီမြစ်ဝှမ်း၌ အေဒီ ၄ ရာစုမှ ၆ ရာစုအထိ တွေ့ရသောစာများမှာ ပျူအက္ခရာ၊ ပျူဘာသာဖြင့် ရေးထိုးထားသည့် ကျောက်စာများ (ဟန်လင်း ပျူကျောက်စာစသည်) ပျူအက္ခရာဖြင့်ရေးထိုးသည့် ဘုရားဟော ကျမ်းဂန် ကောက်နုတ်ချက် ရွှေပေချပ်များ၊ ပျူ - သက္ကတ နှစ်ဘာသာရောကျောက်စာ စသည်တို့ဖြစ်သည်။';
 
-var isPaused = false;
+
+var isMobile = false;
+
+// http://www.gambit.ph/tip-detecting-a-mobile-browser-with-javascript/
+if (navigator.userAgent.match(/Mobi/) ) {	// mobile
+	isMobile = true;
+}
 
 // fps
 const FPS = 30;
@@ -13,28 +19,62 @@ const INTERVAL = 1000 / FPS;
 var now, then, elapsed;
 
 // canvas
-const C_WIDTH = 640;
-const C_HEIGHT = 480;
-var can = document.createElement('canvas');
-var ctx = can.getContext('2d');
-var px, py;
-can.width = C_WIDTH ;
+//var can = document.createElement('canvas');
+var can = document.getElementById('canvas');
+//document.body.appendChild(can);
+
+var C_WIDTH;
+var C_HEIGHT;
+
+if(isMobile) {
+	var deviceWidth = window.innerWidth;
+	var deviceHeight = window.innerHeight;
+	C_WIDTH = deviceWidth - 40;
+	C_HEIGHT = deviceHeight * 0.5;
+
+	can.addEventListener("touchmove", touchMove);
+	can.addEventListener("touchstart", touchStart);
+	can.addEventListener("touchend", touchEnd);
+}
+else {
+	C_WIDTH = 576;
+	C_HEIGHT = 480;
+
+	can.addEventListener('mousemove', mouseMove);
+	can.addEventListener('mousedown', mouseDown);
+}
+
+can.width = C_WIDTH;
 can.height = C_HEIGHT;
-document.body.appendChild(can);
-can.addEventListener('mousemove', mouseMove);
-can.addEventListener('mousedown', mouseDown);
+
+const CAN_X_OFFSET = can.offsetLeft - window.pageXOffset;
+const CAN_Y_OFFSET = can.offsetTop - window.pageYOffset;
+
+var isPaused = false;
+var px, py;
+
+// touch
+const TAP_INTERVAL = 600;	// ms
+var touchStartTime;
+var firstTapped = false;
+var firstTapTime;
+
+// ctx
+var ctx = can.getContext('2d');
+ctx.textBaseline = 'top';
 
 // multiplier
 const SPR_ALPHA_M = 0.925;	// must be lesser than 1
 const SPR_FONT_SIZE_M = 1.25;
 
 // txtSprites
-const FONT_NAME = 'Padauk';
+const FONT_NAME = 'Myanmar3';
 const FONT_ALPHA_DEFAULT = 0.2;
-const FONT_SIZE_START = 12;
+const FONT_SIZE_RATIO_TO_CANVAS_HEIGHT = 32;
+const FONT_SIZE_START = C_HEIGHT / FONT_SIZE_RATIO_TO_CANVAS_HEIGHT >> 0;
 const FONT_HEIGHT = FONT_SIZE_START * 1.4 >> 0;	// 1.4 may vary depending on font
 const LINE_SPACE = FONT_SIZE_START / 2 >> 0;
-var spr = [];
+var spr = txt2Sprites(TXT);
 
 //dev env
 //var _showRect = false;
@@ -44,10 +84,6 @@ go();
 
 
 function go() {
-	ctx.textBaseline = 'top';
-
-	spr = txt2Sprites(TXT);
-
 	then = Date.now();
 
 	// starting loop
@@ -118,7 +154,11 @@ function txt2Sprites(text) {
 	var spr = [];
 	var spaceWidth = (ctx.measureText(' ')).width;
 
-	for (var i = 0; i < words.length; i++) {
+	var isFull = false;
+
+	for (var i = 0; !isFull ; i++) {
+		if(words[i] === undefined) i = 0;
+
 		var testLine = line + words[i];
 		var wordWidth = (ctx.measureText(words[i])).width;
 		var testWidth = (ctx.measureText(testLine)).width;
@@ -128,6 +168,7 @@ function txt2Sprites(text) {
 
 			y += FONT_HEIGHT + LINE_SPACE;
 			if(y > C_HEIGHT - FONT_HEIGHT) {
+				isFull = true;
 				break;
 			}
 			x = x0;
@@ -162,15 +203,58 @@ function txt2Sprites(text) {
 }
 
 function mouseMove(e) {
-	var x = e.clientX - (can.offsetLeft - window.pageXOffset);
-	var y = e.clientY - (can.offsetTop - window.pageYOffset);
+	var x = e.clientX - CAN_X_OFFSET;
+	var y = e.clientY - CAN_Y_OFFSET;
 
 	if((px === x && py === y) || isPaused) return;
 
+	checkSpr(x, y);
+}
+
+function mouseDown(e) {
+	isPaused = !isPaused;
+
+	//dev env
+	//_showRect = !_showRect;
+}
+
+function touchMove(e) {
+	e.preventDefault();
+	var x = e.touches[0].pageX - CAN_X_OFFSET;
+	var y = e.touches[0].pageY - CAN_Y_OFFSET;
+
+	if((px === x && py === y) || isPaused) return;
+
+	checkSpr(x, y);
+}
+
+function touchStart(e) {
+	e.preventDefault();
+	touchStartTime = Date.now();
+}
+
+function touchEnd(e) {
+	e.preventDefault();
+	var rightNow = Date.now();
+
+	if(rightNow - touchStartTime > TAP_INTERVAL) return;	// not a tap
+
+	// okay, it's a tap whatsoever
+	if(firstTapped && (rightNow - firstTapTime < TAP_INTERVAL)) {	// and it's a double-tap
+		firstTapped = false;
+		mouseDown(e);
+	}
+	else {	// no, it took too long to be a single-tap
+		firstTapTime = rightNow;
+		firstTapped = true;
+	}
+}
+
+function checkSpr(x, y) {
 	// I really miss actionScript here...
 	for (var i = 0; i < spr.length; i++) {
 		if( x >= spr[i].x1 && x <= spr[i].x2 &&
-				y >= spr[i].y1 && y <= spr[i].y2) {
+			y >= spr[i].y1 && y <= spr[i].y2) {
 			spr[i].isAnimating = true;
 			spr[i].alpha = 1.0;
 			px = x;
@@ -184,11 +268,4 @@ function rgba(r, g, b, a) {
 	// r,g,b is [0, 255)
 	// a is [0, 1)
 	return 'rgba(' + String(r>>0) + ',' + String(g>>0) + ',' + String(b>>0) + ',' + a + ')';
-}
-
-function mouseDown(e) {
-	isPaused = !isPaused;
-
-	//dev env
-	//_showRect = !_showRect;
 }

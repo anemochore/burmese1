@@ -1,6 +1,6 @@
 # burmese typo 1
 
-2016-1-24~25  
-javascript canvas only.  
+  
+2016-1-24~28, canvas + pure javascript.  
 text from https://my.wikipedia.org/wiki/မြန်မာဘာသာ  
-using burmese webfont 'padauk' from http://mmwebfonts.comquas.com
+using burmese webfont 'Myanmar3' from http://mmwebfonts.comquas.com
