@@ -6,7 +6,7 @@ html, body {
     overflow: hidden;
     margin: 0;
     padding: 10px;
-    font-size: 10pt;
+    font-size: 11pt;
 }
 
 h1 {
@@ -18,4 +18,11 @@ h1 {
 canvas {
     margin: 0;
     padding: 0;
+}
+
+.metadata {
+    font-family: Trebuchet,Trebuchet MS,Arial,sans-serif;
+    font-size: 90%;
+    letter-spacing: 0.1em;
+    color: #999999;
 }
