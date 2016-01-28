@@ -29,8 +29,8 @@ var C_HEIGHT;
 if(isMobile) {
 	var deviceWidth = window.innerWidth;
 	var deviceHeight = window.innerHeight;
-	C_WIDTH = deviceWidth - 40;
-	C_HEIGHT = deviceHeight * 0.5;
+	C_WIDTH = deviceWidth - 20;
+	C_HEIGHT = deviceHeight * 0.6;
 
 	can.addEventListener("touchmove", touchMove);
 	can.addEventListener("touchstart", touchStart);
@@ -51,13 +51,13 @@ const CAN_X_OFFSET = can.offsetLeft - window.pageXOffset;
 const CAN_Y_OFFSET = can.offsetTop - window.pageYOffset;
 
 var isPaused = false;
-var px, py;
 
 // touch
 const TAP_INTERVAL = 600;	// ms
 var touchStartTime;
 var firstTapped = false;
 var firstTapTime;
+var lastAnimatedSprIndex = NaN;
 
 // ctx
 var ctx = can.getContext('2d');
@@ -71,6 +71,7 @@ const SPR_FONT_SIZE_M = 1.25;
 const FONT_NAME = 'Myanmar3';
 const FONT_ALPHA_DEFAULT = 0.2;
 const FONT_SIZE_RATIO_TO_CANVAS_HEIGHT = 32;
+
 const FONT_SIZE_START = C_HEIGHT / FONT_SIZE_RATIO_TO_CANVAS_HEIGHT >> 0;
 const FONT_HEIGHT = FONT_SIZE_START * 1.4 >> 0;	// 1.4 may vary depending on font
 const LINE_SPACE = FONT_SIZE_START / 2 >> 0;
@@ -203,10 +204,10 @@ function txt2Sprites(text) {
 }
 
 function mouseMove(e) {
+	if(isPaused) return;
+
 	var x = e.clientX - CAN_X_OFFSET;
 	var y = e.clientY - CAN_Y_OFFSET;
-
-	if((px === x && py === y) || isPaused) return;
 
 	checkSpr(x, y);
 }
@@ -220,10 +221,10 @@ function mouseDown(e) {
 
 function touchMove(e) {
 	e.preventDefault();
+	if(isPaused) return;
+
 	var x = e.touches[0].pageX - CAN_X_OFFSET;
 	var y = e.touches[0].pageY - CAN_Y_OFFSET;
-
-	if((px === x && py === y) || isPaused) return;
 
 	checkSpr(x, y);
 }
@@ -234,17 +235,16 @@ function touchStart(e) {
 }
 
 function touchEnd(e) {
-	e.preventDefault();
 	var rightNow = Date.now();
 
-	if(rightNow - touchStartTime > TAP_INTERVAL) return;	// not a tap
+	if(rightNow - touchStartTime > TAP_INTERVAL / 2) return;	// not a tap
 
 	// okay, it's a tap whatsoever
-	if(firstTapped && (rightNow - firstTapTime < TAP_INTERVAL)) {	// and it's a double-tap
+	if(firstTapped && (rightNow - firstTapTime < TAP_INTERVAL)) {	// and if it's a double-tap
 		firstTapped = false;
 		mouseDown(e);
 	}
-	else {	// no, it took too long to be a single-tap
+	else {	// if it's not a double-tap, it's a single-tap
 		firstTapTime = rightNow;
 		firstTapped = true;
 	}
@@ -253,12 +253,12 @@ function touchEnd(e) {
 function checkSpr(x, y) {
 	// I really miss actionScript here...
 	for (var i = 0; i < spr.length; i++) {
-		if( x >= spr[i].x1 && x <= spr[i].x2 &&
-			y >= spr[i].y1 && y <= spr[i].y2) {
+		if(x >= spr[i].x1 && x <= spr[i].x2 &&
+				y >= spr[i].y1 && y <= spr[i].y2 &&
+				i != lastAnimatedSprIndex) {
 			spr[i].isAnimating = true;
 			spr[i].alpha = 1.0;
-			px = x;
-			py = y;
+			lastAnimatedSprIndex = i;
 			break;
 		}
 	}
