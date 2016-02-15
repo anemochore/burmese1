@@ -247,7 +247,7 @@ function touchEnd(e) {
 
 function checkSpr(x, y) {
 	// I really miss actionScript here...
-	for (i = 0; i < spr.length; i++) {
+	for (i = numActive; i < spr.length; i++) {
 		if(x >= spr[i].x1 && x <= spr[i].x2 &&
 				y >= spr[i].y1 && y <= spr[i].y2 &&
 				i != lastAnimatedSprIndex) {
