@@ -110,7 +110,7 @@ function loop() {
 function update() {
 	for (i = 0; i < numActive; i++) {
 		spr[i].alpha *= SPR_ALPHA_M;
-		console.log(spr[i].alpha *= SPR_ALPHA_M;)
+		console.log(spr[i].alpha *= SPR_ALPHA_M);
 		if(spr[i].alpha < 0.1) {
 			spr[i].fontSize = FONT_SIZE_START;
 			spr[i].width = spr[i].oWidth;
