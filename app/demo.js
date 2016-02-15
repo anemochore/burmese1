@@ -187,7 +187,7 @@ function txt2Sprites(text) {
 			y2: y + FONT_HEIGHT - 1,
 			width: wordWidth,
 			height: FONT_SIZE_START,
-	v		fontSize: FONT_SIZE_START,
+			fontSize: FONT_SIZE_START,
 			alpha: FONT_ALPHA_DEFAULT,
 			r: Math.random() * 255 >> 0,
 			g: Math.random() * 255 >> 0,
