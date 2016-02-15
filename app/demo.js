@@ -258,7 +258,6 @@ function checkSpr(x, y) {
 				y >= spr[i].y1 && y <= spr[i].y2 &&
 				i != lastAnimatedSprIndex) {
 			activateSpr(i);
-			
 			lastAnimatedSprIndex = i;
 			break;
 		}
@@ -286,7 +285,7 @@ function deactivateSpr(i) {
 	spr[numActive] = spr[i];
 	spr[i] = tmpSpr;
 	
-	Console.log(numActive);
+	console.log(numActive);
 }
 
 function rgba(r, g, b, a) {
