@@ -285,6 +285,8 @@ function deactivateSpr(i) {
 	tmpSpr = spr[numActive];
 	spr[numActive] = spr[i];
 	spr[i] = tmpSpr;
+	
+	Console.log(numActive);
 }
 
 function rgba(r, g, b, a) {
