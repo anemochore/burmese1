@@ -110,7 +110,6 @@ function loop() {
 function update() {
 	for (i = 0; i < numActive; i++) {
 		spr[i].alpha *= SPR_ALPHA_M;
-		console.log(spr[i].alpha);
 		if(spr[i].alpha < 0.1) {
 			spr[i].fontSize = FONT_SIZE_START;
 			spr[i].width = spr[i].oWidth;
@@ -118,7 +117,7 @@ function update() {
 			spr[i].x1 = spr[i].oX;
 			spr[i].y1 = spr[i].oY;
 			
-			deactivateSpr[i];
+			deactivateSpr(i);
 		}
 		else {
 			spr[i].fontSize *= SPR_FONT_SIZE_M;
@@ -285,8 +284,6 @@ function deactivateSpr(i) {
 	tmpSpr = spr[numActive];
 	spr[numActive] = spr[i];
 	spr[i] = tmpSpr;
-	
-	console.log(numActive);
 }
 
 function rgba(r, g, b, a) {
