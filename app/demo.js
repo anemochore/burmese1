@@ -118,7 +118,6 @@ function update() {
 			spr[i].y1 = spr[i].oY;
 			
 			deactivateSpr(i);
-			//console.log(i, numActive, spr[i].alpha);
 		}
 		else {
 			spr[i].fontSize *= SPR_FONT_SIZE_M;
@@ -285,8 +284,6 @@ function deactivateSpr(i) {
 	tmpSpr = spr[numActive];
 	spr[numActive] = spr[i];
 	spr[i] = tmpSpr;
-	
-			//console.log(i, numActive, spr[i].alpha);
 }
 
 function rgba(r, g, b, a) {
