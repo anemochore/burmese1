@@ -76,9 +76,10 @@ const FONT_SIZE_START = C_HEIGHT / FONT_SIZE_RATIO_TO_CANVAS_HEIGHT >> 0;
 const FONT_HEIGHT = FONT_SIZE_START * 1.4 >> 0;	// 1.4 may vary depending on font
 const LINE_SPACE = FONT_SIZE_START / 2 >> 0;
 var spr = txt2Sprites(TXT);
+var tmpSpr;
+var numActive = 0;
 
-//dev env
-//var _showRect = false;
+var i;
 
 
 go();
@@ -103,44 +104,48 @@ function loop() {
 
 	then = now - (elapsed % INTERVAL);
 
+	update();
+}
+
+function update() {
+	for (i = 0; i < numActive; i++) {
+		spr[i].alpha *= SPR_ALPHA_M;
+		if(spr[i].alpha < 0.1) {
+			spr[i].fontSize = FONT_SIZE_START;
+			spr[i].width = spr[i].oWidth;
+			spr[i].height = spr[i].oHeight;
+			spr[i].x1 = spr[i].oX;
+			spr[i].y1 = spr[i].oY;
+			
+			deactivateSpr(i);
+			//console.log(i, numActive, spr[i].alpha);
+		}
+		else {
+			spr[i].fontSize *= SPR_FONT_SIZE_M;
+			var deltaX = spr[i].width * SPR_FONT_SIZE_M - spr[i].width;
+			var deltaY = spr[i].height * SPR_FONT_SIZE_M - spr[i].height;
+			spr[i].width *= SPR_FONT_SIZE_M;
+			spr[i].height *= SPR_FONT_SIZE_M;
+			spr[i].x1 -= deltaX / 2;
+			spr[i].y1 -= deltaY / 2;
+		}
+	}
+	draw();
+}
+
+function draw() {
 	// drawing goes below
 	ctx.clearRect(0,0, C_WIDTH,C_HEIGHT);
 
-	for (var i = 0; i < spr.length; i++) {
-		ctx.fillStyle = rgba(0, 0, 0, FONT_ALPHA_DEFAULT);
-		if(spr[i].isAnimating) {
-			spr[i].alpha *= SPR_ALPHA_M;
-			if(spr[i].alpha < 0.1) {
-				spr[i].isAnimating = false;
-				spr[i].alpha = 1.0;
-
-				spr[i].fontSize = FONT_SIZE_START;
-				spr[i].width = spr[i].oWidth;
-				spr[i].height = spr[i].oHeight;
-				spr[i].x1 = spr[i].oX;
-				spr[i].y1 = spr[i].oY;
-			}
-			else {
-				spr[i].fontSize *= SPR_FONT_SIZE_M;
-				var deltaX = spr[i].width * SPR_FONT_SIZE_M - spr[i].width;
-				var deltaY = spr[i].height * SPR_FONT_SIZE_M - spr[i].height;
-				spr[i].width *= SPR_FONT_SIZE_M;
-				spr[i].height *= SPR_FONT_SIZE_M;
-				spr[i].x1 -= deltaX / 2;
-				spr[i].y1 -= deltaY / 2;
-			}
-			ctx.fillStyle = rgba(spr[i].r, spr[i].g, spr[i].b, spr[i].alpha);
-		}
+	for (i = 0; i < numActive; i++) {
+		ctx.fillStyle = rgba(spr[i].r, spr[i].g, spr[i].b, spr[i].alpha);
 		ctx.font = spr[i].fontSize + 'px ' + FONT_NAME;
 		ctx.fillText(spr[i].word, spr[i].x1,spr[i].y1);
-
-		//dev env
-		/*
-		if(_showRect) {
-			ctx.strokeStyle = spr[i].color;
-			ctx.strokeRect(spr[i].x1,spr[i].y1, spr[i].width,FONT_HEIGHT);
-		}
-		*/
+	}
+	for (i = numActive; i < spr.length; i++) {
+		ctx.fillStyle = rgba(0, 0, 0, FONT_ALPHA_DEFAULT);
+		ctx.font = spr[i].fontSize + 'px ' + FONT_NAME;
+		ctx.fillText(spr[i].word, spr[i].x1,spr[i].y1);
 	}
 }
 
@@ -157,7 +162,7 @@ function txt2Sprites(text) {
 
 	var isFull = false;
 
-	for (var i = 0; !isFull ; i++) {
+	for (i = 0; !isFull ; i++) {
 		if(words[i] === undefined) i = 0;
 
 		var testLine = line + words[i];
@@ -193,8 +198,8 @@ function txt2Sprites(text) {
 			alpha: FONT_ALPHA_DEFAULT,
 			r: Math.random() * 255 >> 0,
 			g: Math.random() * 255 >> 0,
-			b: Math.random() * 255 >> 0,
-			isAnimating: false
+			b: Math.random() * 255 >> 0
+			//isAnimating: false
 		});
 
 		x += wordWidth + spaceWidth - 1;
@@ -214,9 +219,6 @@ function mouseMove(e) {
 
 function mouseDown(e) {
 	isPaused = !isPaused;
-
-	//dev env
-	//_showRect = !_showRect;
 }
 
 function touchMove(e) {
@@ -252,16 +254,39 @@ function touchEnd(e) {
 
 function checkSpr(x, y) {
 	// I really miss actionScript here...
-	for (var i = 0; i < spr.length; i++) {
+	for (i = numActive; i < spr.length; i++) {
 		if(x >= spr[i].x1 && x <= spr[i].x2 &&
 				y >= spr[i].y1 && y <= spr[i].y2 &&
 				i != lastAnimatedSprIndex) {
-			spr[i].isAnimating = true;
-			spr[i].alpha = 1.0;
+			activateSpr(i);
 			lastAnimatedSprIndex = i;
 			break;
 		}
 	}
+}
+
+function activateSpr(i) {
+	//spr[i].isAnimating = true;
+	spr[i].alpha = 1.0;
+
+	tmpSpr = spr[numActive];
+	spr[numActive] = spr[i];
+	spr[i] = tmpSpr;
+	
+	numActive++;
+}
+
+function deactivateSpr(i) {
+	//spr[i].isAnimating = false;
+	spr[i].alpha = 1.0;
+
+	numActive--;
+	
+	tmpSpr = spr[numActive];
+	spr[numActive] = spr[i];
+	spr[i] = tmpSpr;
+	
+			//console.log(i, numActive, spr[i].alpha);
 }
 
 function rgba(r, g, b, a) {
